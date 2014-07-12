@@ -20,6 +20,10 @@ public class SpriteSheet
 		load();
 	}
 	
+	public int size()
+	{
+		return SIZE;
+	}
 	
 	private void load()
 	{
@@ -33,5 +37,6 @@ public class SpriteSheet
 			e.printStackTrace();
 		}
 	}
+	
 	
 }
