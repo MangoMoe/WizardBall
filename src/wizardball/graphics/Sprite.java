@@ -8,6 +8,9 @@ public class Sprite	// assumes square sprite
 	public int[] pixels;	// needs to be public?
 	private SpriteSheet sheet;	// sprite sheet that is the source for the sprite
 	
+	public static Sprite grass = new Sprite(16, 0, 0, null);	// temporary
+	// why static? --> no need for instances of sprite class outside of sprite class, can access statically?
+	
 	public Sprite(int size, int x, int y, SpriteSheet sheet)
 	{
 		SIZE = size;

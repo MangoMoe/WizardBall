@@ -8,7 +8,7 @@ package wizardball;
  *
  * @author Dallin
  * 
- * Episode Number: 20
+ * Next Episode: 22
  */
 import wizardball.graphics.Screen;
 
