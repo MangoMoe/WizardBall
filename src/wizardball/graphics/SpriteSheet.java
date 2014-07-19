@@ -8,9 +8,14 @@ import javax.imageio.ImageIO;
 public class SpriteSheet 
 {
 	
-	private String path;		// file path
+	private String path;		// file path to spritesheet
 	private final int SIZE;		// size of spritesheet
 	public int[] pixels;
+	
+	public static SpriteSheet tiles = new SpriteSheet("/textures/spriteSheet.png", 256);
+														// make sure the build path includes the "res" (short for resources)
+														// by going to properties/java build path/libraries/add class folder
+														// also make sure path string starts with forward slash
 	
 	public SpriteSheet(String path, int size)
 	{

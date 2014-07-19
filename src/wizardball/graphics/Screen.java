@@ -59,13 +59,12 @@ public class Screen  //fills in and displays pixels (aka render)
             for (int x = 0; x < width; x++)
             {
                 int x2 = x + dx;
-                //int x2 = x + dx;
                 //if (x2 < 0 || x2 >= width) break;
-                int tileIndex = ((x2 >> 4) & (TILE_MAP_WIDTH_MASK)) + ((y2 >> 4) & (TILE_MAP_HEIGHT_MASK)) * TILE_MAP_HEIGHT; //finds the tile index for this pixel by dividing by the width of each tile (giving every 32 pixels) and multiplying by the width of the tile map (64 tiles)
+                //int tileIndex = ((x2 >> 4) & (TILE_MAP_WIDTH_MASK)) + ((y2 >> 4) & (TILE_MAP_HEIGHT_MASK)) * TILE_MAP_HEIGHT; //finds the tile index for this pixel by dividing by the width of each tile (giving every 32 pixels) and multiplying by the width of the tile map (64 tiles)
                 // the & TILE_MAP_WIDTH_MASK "resets" to 0 if over 64, preventing array index problems, think about bitwise
                 //int tileIndex = (x / tileWidth) + (y / tileWidth) * tileMapWidth; //bitwise operators improve speed, this code and the line 2 above do the same thing
                 ////////////////bitwise operators, know//////////////////////////
-                pixels[x  + (y * width)] = tiles[tileIndex]; //assigns color to that pixel(index expression converts x,y coordinate to single number for one dimensional array index)
+                pixels[x  + (y * width)] = Sprite.grass.pixels[(x&15) + (y&15)* Sprite.grass.size()]; //assigns color to that pixel(index expression converts x,y coordinate to single number for one dimensional array index)
             }
         }
     }

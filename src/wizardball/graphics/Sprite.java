@@ -8,7 +8,7 @@ public class Sprite	// assumes square sprite
 	public int[] pixels;	// needs to be public?
 	private SpriteSheet sheet;	// sprite sheet that is the source for the sprite
 	
-	public static Sprite grass = new Sprite(16, 0, 0, null);	// temporary
+	public static Sprite grass = new Sprite(16, 0, 0, SpriteSheet.tiles);	// temporary
 	// why static? --> no need for instances of sprite class outside of sprite class, can access statically?
 	
 	public Sprite(int size, int x, int y, SpriteSheet sheet)
@@ -23,6 +23,8 @@ public class Sprite	// assumes square sprite
 		load();	// load sprite image from spritesheet
 		
 	}
+	
+	public int size(){ return SIZE; }
 	
 	private void load()	// the spritesheet has already loaded the image we need, we just need to access it
 	{
